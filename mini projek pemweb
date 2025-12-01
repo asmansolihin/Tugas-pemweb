@@ -1,0 +1,30 @@
+// Mini Project – Daftar Belanja
+let daftar = [];
+
+function tambahItem(item) {
+    daftar.push(item);
+    console.log(`Item "${item}" ditambahkan!`);
+}
+
+function hapusItem(item) {
+    let index = daftar.indexOf(item);
+    if (index !== -1) {
+        daftar.splice(index, 1);
+        console.log(`Item "${item}" dihapus!`);
+    } else {
+        console.log("Item tidak ditemukan");
+    }
+}
+
+function tampilkanDaftar() {
+    console.log("Daftar Belanja:");
+    daftar.forEach((val, i) => {
+        console.log(`${i+1}. ${val}`);
+    });
+}
+
+tambahItem("Susu");
+tambahItem("Roti");
+tampilkanDaftar();
+hapusItem("Roti");
+tampilkanDaftar();
